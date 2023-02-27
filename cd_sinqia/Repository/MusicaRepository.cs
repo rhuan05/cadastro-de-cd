@@ -1,5 +1,5 @@
 ﻿using Dapper;
-using MySqlConnector;
+using Microsoft.Data.SqlClient;
 
 namespace cd_sinqia.Repository
 {
@@ -7,6 +7,7 @@ namespace cd_sinqia.Repository
     {
 
         private string _stringConnection { get; set; }
+
         //Pegando a string connection
         public MusicaRepository()
         {
@@ -16,37 +17,61 @@ namespace cd_sinqia.Repository
         //Métodos do repository
         public string InserirMusica(Musica musica)
         {
-            string query = "INSERT INTO musica (musica_id, cd_id, nome_musica, tempo_segundos) VALUES (@musicaId, @id, @nomeMusica, @tempoSegundos)";
-            DynamicParameters parametros = new(musica);
+            try
+            {
+                string query = "INSERT INTO musica (musica_id, cd_id, nome_musica, tempo_segundos) VALUES (@musicaId, @id, @nomeMusica, @tempoSegundos)";
+                DynamicParameters parametros = new(musica);
 
-            using MySqlConnection conn = new MySqlConnection(_stringConnection);
-            conn.Execute(query, parametros);
+                SqlConnection conn = new SqlConnection(_stringConnection);
+                conn.Execute(query, parametros);
 
-            return "Musica criada com sucesso!";
+                return "Musica criada com sucesso!";
+            }
+            catch(Exception error)
+            {
+                Console.WriteLine(error);
+                return "Não foi possível criar essa música!";
+            }
         }
 
         public string EditarMusica(Musica musica, int id)
         {
-            string query = "UPDATE musica SET nome_musica = @nomeMusica, tempo_segundos = @tempoSegundos WHERE musica_id = @id";
-            DynamicParameters parametros = new(musica);
-            parametros.Add("id", id);
+            try
+            {
+                string query = "UPDATE musica SET nome_musica = @nomeMusica, tempo_segundos = @tempoSegundos WHERE musica_id = @id";
+                DynamicParameters parametros = new(musica);
+                parametros.Add("id", id);
 
-            using MySqlConnection conn = new MySqlConnection(_stringConnection);
-            conn.Execute(query, parametros);
+                SqlConnection conn = new SqlConnection(_stringConnection);
+                conn.Execute(query, parametros);
 
-            return "Musica editada com sucesso!";
+                return "Musica editada com sucesso!";
+            }
+            catch(Exception error)
+            {
+                Console.WriteLine(error);
+                return "Não foi possível editar essa música!";
+            }
         }
 
         public string ExcluirMusica(int id)
         {
-            string query = "DELETE musica WHERE musica_id = @id";
-            DynamicParameters parametros = new();
-            parametros.Add("id", id);
+            try
+            {
+                string query = "DELETE musica WHERE musica_id = @id";
+                DynamicParameters parametros = new();
+                parametros.Add("id", id);
 
-            using MySqlConnection conn = new MySqlConnection(_stringConnection);
-            conn.Execute(query, parametros);
+                SqlConnection conn = new SqlConnection(_stringConnection);
+                conn.Execute(query, parametros);
 
-            return "Música exluida com sucesso!";
+                return "Música exluida com sucesso!";
+            }
+            catch(Exception error)
+            {
+                Console.WriteLine(error);
+                return "Não foi possível deletar essa música!";
+            }
         }
 
     }
