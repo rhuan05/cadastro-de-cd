@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nVZr1tHj6PWu41D4AsvJ3Zg5JAeYUCEPsy9N4QVWGaf5VPeMuSWB46o9/uBhPaYTIEHPoFvNKGv6zVFyQ/CDww==",
+  "dgSpecHash": "ladzZJY5ljEBu33Ar/dLfwXJOPz4eJy64V18I5/vsUBMC16vxDOYId7t7p6KDU4v4RGCQ0Z11nQRUo/kozPHSw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rhuan.firmino\\Documents\\cd_sinqia\\cd_sinqia\\cd_sinqia.csproj",
+  "projectFilePath": "C:\\Users\\rhuan.firmino\\Desktop\\cadastro-de-cd\\cd_sinqia\\cd_sinqia.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rhuan.firmino\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\rhuan.firmino\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

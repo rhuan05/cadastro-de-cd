@@ -10,6 +10,7 @@ namespace cd_sinqia.Controllers
 
         public CdRepository _repository { get; set; }
 
+
         //Controller chamando pegando o repository
         public CdController()
         {
@@ -17,6 +18,12 @@ namespace cd_sinqia.Controllers
         }
 
         //Métodos da controller
+        [HttpGet("dados")]
+        public IActionResult VerDados()
+        {
+            return Ok(_repository.VerDados());
+        }
+
         [HttpPost("inserir")]
         public ActionResult InserirCd(Cd cd)
         {

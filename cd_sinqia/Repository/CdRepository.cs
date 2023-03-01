@@ -15,11 +15,20 @@ namespace cd_sinqia.Repository
         }
 
         //Métodos do repository
+        public List<Cd> VerDados()
+        {
+            string query = "SELECT * FROM cd";
+
+            SqlConnection conn = new SqlConnection(_stringConnection);
+
+            return conn.Query<Cd>(query).ToList();
+        }
+
         public string InserirCd(Cd cd) 
         {
             try
             {
-                string query = "INSERT INTO cd (cd_id, nome, autor, data_criacao) VALUES (@id, @nome, @autor, @dataCriacao)";
+                string query = "INSERT INTO cd (nome, autor, data_criacao) VALUES (@nome, @autor, @dataCriacao)";
                 DynamicParameters parametros = new(cd);
 
                 SqlConnection conn = new SqlConnection(_stringConnection);
@@ -58,7 +67,7 @@ namespace cd_sinqia.Repository
         {
             try
             {
-                string query = "DELETE FROM cd WHERE cd_id = @id; DELETE FROM musica WHERE cd_id = @id";
+                string query = "DELETE FROM cd WHERE cd.cd_id = @id";
                 DynamicParameters parametros = new();
                 parametros.Add("id", id);
 

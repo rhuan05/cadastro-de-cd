@@ -2294,11 +2294,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rhuan.firmino\\Documents\\cd_sinqia\\cd_sinqia\\cd_sinqia.csproj",
+      "projectUniqueName": "C:\\Users\\rhuan.firmino\\Desktop\\cadastro-de-cd\\cd_sinqia\\cd_sinqia.csproj",
       "projectName": "cd_sinqia",
-      "projectPath": "C:\\Users\\rhuan.firmino\\Documents\\cd_sinqia\\cd_sinqia\\cd_sinqia.csproj",
+      "projectPath": "C:\\Users\\rhuan.firmino\\Desktop\\cadastro-de-cd\\cd_sinqia\\cd_sinqia.csproj",
       "packagesPath": "C:\\Users\\rhuan.firmino\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rhuan.firmino\\Documents\\cd_sinqia\\cd_sinqia\\obj\\",
+      "outputPath": "C:\\Users\\rhuan.firmino\\Desktop\\cadastro-de-cd\\cd_sinqia\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rhuan.firmino\\AppData\\Roaming\\NuGet\\NuGet.Config",

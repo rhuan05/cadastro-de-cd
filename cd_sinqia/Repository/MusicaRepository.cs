@@ -19,7 +19,7 @@ namespace cd_sinqia.Repository
         {
             try
             {
-                string query = "INSERT INTO musica (musica_id, cd_id, nome_musica, tempo_segundos) VALUES (@musicaId, @id, @nomeMusica, @tempoSegundos)";
+                string query = "INSERT INTO musica (cd_id, nome_musica, tempo_segundos) VALUES (@cdId, @nomeMusica, @tempoSegundos)";
                 DynamicParameters parametros = new(musica);
 
                 SqlConnection conn = new SqlConnection(_stringConnection);
